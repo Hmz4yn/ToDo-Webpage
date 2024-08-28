@@ -1,0 +1,82 @@
+.container-fixed {
+    max-width: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.navbar{
+
+    margin-left: auto;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup .card {
+    margin: auto;
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+}
+
+.editPopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.editPopup .card {
+    margin: auto;
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+}
+
+
+/* Footer styling */
+footer {
+    width: 100%;
+}
+
+
+.edtBtn{
+    
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delBtn{
+    
+    margin-left: 5px;
+    background-color: #ff0000; /* Blue background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.actionButton{
+    
+    margin-bottom: 15px;
+    
+}
+

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-dark ">
+        <div class="container-fluid container-fixed ">
+            <a class="navbar-brand" href="#" style="color: aliceblue;">Task List</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" style="color: aliceblue;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: rgb(157, 159, 160);">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="color: aliceblue;">
+                            Items
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true" style="color: rgb(128, 128, 128);">Contact</a>
+                    </li>
+                </ul>
+                <input class="search-bar" id="search-bar" type="search" placeholder="Search any task..."
+                    aria-label="Search">
+                <button type="button" class="btn btn-outline-primary btn-sm ms-2 " id="addTask">Add Tasks</button>
+                <button type="button" class="btn btn-outline-danger btn-sm ms-2" id="removeAllTask">Clear Tasks</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container container-fixed" style="background-color: rgb(39, 39, 39); margin-top: 20px;">
+            <div class="row text-center">
+                <div class="col-sm-2" style="color: aliceblue;">
+                    <p>S.No#</p>
+                </div>
+                <div class="col-sm-3 title" style="color: aliceblue;">
+                    <p>Title</p>
+                </div>
+                <div class="col-sm-3 description" style="color: aliceblue;">
+                    <p>Description</p>
+                </div>
+                <div class="col-sm-2 dateTime" style="color: aliceblue;">
+                    <p>Date/time</p>
+                </div>
+                <div class="col-sm-2" style="color: aliceblue;">
+                    <p>Action</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="popup">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-sm-6" id="popupContent">
+                        <div class="card">
+                            <div class="card-body">
+                                <form id="form-Task">
+                                    <div class="form-group">
+                                        <p class="text-dark">Add Task</p>
+                                        <input type="text" id="title" class="form-control" maxlength="50"
+                                            autocomplete="off" placeholder="Title" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea type="text" id="description" cols="30" rows="5"
+                                            class="form-control mt-1" maxlength="500" autocomplete="off"
+                                            placeholder="Description..." required></textarea>
+                                    </div>
+                                    <button class="btn btn-success btn-block mt-2 " id="addSaveBtn">Save</button>
+                                    <button class="btn btn-danger btn-block mt-2 " id="addCloseBtn">Close</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="editPopup" id="editPopup">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-sm-6" id="editPopupContent">
+                        <div class="card">
+                            <div class="card-body">
+                                <form id="form-Edit">
+                                    <div class="form-group">
+                                        <p class="text-dark">Edit Task</p>
+                                        <input type = "hidden" id = "editId">
+                                        <input type="text" id="editTitle" class="form-control" maxlength="50"
+                                            autocomplete="off" placeholder="Title" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea type="text" id="editDescription" cols="30" rows="5"
+                                            class="form-control mt-1" maxlength="500" autocomplete="off"
+                                            placeholder="Description..." required></textarea>
+                                    </div>
+                                    <button class="btn btn-success btn-block mt-2 " id="editSaveBtn">Save</button>
+                                    <button class="btn btn-danger btn-block mt-2 " id="editCloseBtn">Close</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <footer class="card-footer w-100 shadow mb-0 mt-5" style="position: absolute; bottom: 0;">
+
+        <div class="d-flex justify-content-center align-items-center" style="background-color: rgb(36, 36, 36); padding: 12px;">
+            <p style="color: aliceblue; margin-top: 15px">Register For free</p>
+            <button type="button" class="btn btn-outline-light ms-2">Sign Up!</button>
+        </div>
+        <div class="d-flex justify-content-center align-items-center" style="background-color: black; padding: 8px;">
+            <p style="color: aliceblue;">
+                © 2020 Copyright:
+                <a class="text-light" href="#">Mobeen Shah</a>
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="src2.js"></script>
+
+</body>
+
+</html>
